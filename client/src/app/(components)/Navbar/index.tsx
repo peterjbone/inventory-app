@@ -1,4 +1,5 @@
 "use client";
+//! COMPLETE
 
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsDarkMode, setIsSidebarCollapsed } from "@/state";
@@ -24,7 +25,7 @@ const Navbar = () => {
 
 	return (
 		<div className="flex justify-between items-center w-full mb-7">
-			{/* LEFT SIDE */}
+			{/* the left */}
 			<div className="flex justify-between items-center gap-5">
 				<button
 					className="px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
@@ -45,7 +46,7 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			{/* RIGHT SIDE */}
+			{/* the right */}
 			<div className="flex justify-between items-center gap-5">
 				<div className="hidden md:flex justify-between items-center gap-5">
 					<div>
