@@ -47,7 +47,7 @@ const CardSalesSummary = () => {
 				<div className="m-5">Loading...</div>
 			) : (
 				<>
-					{/* HEADER */}
+					{/* the header */}
 					<div>
 						<h2 className="text-lg font-semibold mb-2 px-7 pt-5">
 							Sales Summary
@@ -55,9 +55,8 @@ const CardSalesSummary = () => {
 						<hr />
 					</div>
 
-					{/* BODY */}
+					{/*** body */}
 					<div>
-						{/* BODY HEADER */}
 						<div className="flex justify-between items-center mb-6 px-7 mt-5">
 							<div className="text-lg font-medium">
 								<p className="text-xs text-gray-400">Value</p>
@@ -84,7 +83,8 @@ const CardSalesSummary = () => {
 								<option value="monthly">Monthly</option>
 							</select>
 						</div>
-						{/* CHART */}
+
+						{/* the charts */}
 						<ResponsiveContainer width="100%" height={350} className="px-7">
 							<BarChart
 								data={salesData}
@@ -128,7 +128,7 @@ const CardSalesSummary = () => {
 						</ResponsiveContainer>
 					</div>
 
-					{/* FOOTER */}
+					{/* footer section */}
 					<div>
 						<hr />
 						<div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
