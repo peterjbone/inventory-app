@@ -39,6 +39,38 @@ const StatCard = ({
 				</div>
 				<hr />
 			</div>
+
+			{/* body section*/}
+			<div className="flex mb-6 items-center justify-around gap-4 px-5">
+				<div className="rounded-full p-5 bg-blue-50 border-sky-300 border-[1px]">
+					{primaryIcon}
+				</div>
+				<div className="flex-1">
+					{details.map((detail, index) => (
+						<React.Fragment key={index}>
+							<div className="flex items-center justify-between my-4">
+								<span className="text-gray-500">{detail.title}</span>
+								<span className="font-bold text-gray-800">{detail.amount}</span>
+								<div className="flex items-center">
+									<detail.IconComponent
+										className={`w-4 h-4 mr-1 ${getChangeColor(
+											detail.changePercentage
+										)}`}
+									/>
+
+									<span
+										className={`font-medium ${getChangeColor(
+											detail.changePercentage
+										)}`}>
+										{formatPercentage(detail.changePercentage)}
+									</span>
+								</div>
+							</div>
+							{index < details.length - 1 && <hr />}
+						</React.Fragment>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 };
