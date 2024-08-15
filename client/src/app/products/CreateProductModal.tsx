@@ -56,7 +56,7 @@ const CreateProductModal = ({
 			<div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
 				<Header name="Create New Product" />
 				<form onSubmit={handleSubmit} className="mt-5">
-					{/* PRODUCT NAME */}
+					{/* name of the product */}
 					<label htmlFor="productName" className={labelCssStyles}>
 						Product Name
 					</label>
@@ -69,6 +69,61 @@ const CreateProductModal = ({
 						className={inputCssStyles}
 						required
 					/>
+
+					{/* the price */}
+					<label htmlFor="productPrice" className={labelCssStyles}>
+						Price
+					</label>
+					<input
+						type="number"
+						name="price"
+						placeholder="Price"
+						onChange={handleChange}
+						value={formData.price}
+						className={inputCssStyles}
+						required
+					/>
+
+					{/* the stock quantity */}
+					<label htmlFor="stockQuantity" className={labelCssStyles}>
+						Stock Quantity
+					</label>
+					<input
+						type="number"
+						name="stockQuantity"
+						placeholder="Stock Quantity"
+						onChange={handleChange}
+						value={formData.stockQuantity}
+						className={inputCssStyles}
+						required
+					/>
+
+					{/* rating of products*/}
+					<label htmlFor="rating" className={labelCssStyles}>
+						Rating
+					</label>
+					<input
+						type="number"
+						name="rating"
+						placeholder="Rating"
+						onChange={handleChange}
+						value={formData.rating}
+						className={inputCssStyles}
+						required
+					/>
+
+					{/* button  */}
+					<button
+						type="submit"
+						className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
+						Create
+					</button>
+					<button
+						onClick={onClose}
+						type="button"
+						className="ml-2 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700">
+						Cancel
+					</button>
 				</form>
 			</div>
 		</div>
