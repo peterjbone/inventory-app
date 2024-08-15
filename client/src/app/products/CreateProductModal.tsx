@@ -28,6 +28,23 @@ const CreateProductModal = ({
 		rating: 0
 	});
 
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = e.target;
+		setFormData({
+			...formData,
+			[name]:
+				name === "price" || name === "stockQuantity" || name === "rating"
+					? parseFloat(value)
+					: value
+		});
+	};
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		onCreate(formData);
+		onClose();
+	};
+
 	if (!isOpen) return null;
 
 	const labelCssStyles = "block text-sm font-medium text-gray-700";
