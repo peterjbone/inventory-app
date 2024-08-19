@@ -20,6 +20,12 @@ const mockSettings: UserSetting[] = [
 const Settings = () => {
 	const [userSettings, setUserSettings] = useState<UserSetting[]>(mockSettings);
 
+	const handleToggleChange = (index: number) => {
+		const settingsCopy = [...userSettings];
+		settingsCopy[index].value = !settingsCopy[index].value as boolean;
+		setUserSettings(settingsCopy);
+	};
+
 	return (
 		<div className="w-full">
 			<Header name="User Settings" />
