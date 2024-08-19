@@ -150,6 +150,35 @@ const Expenses = () => {
 						</div>
 					</div>
 				</div>
+				{/* charts */}
+				<div className="flex-grow bg-white shadow rounded-lg p-4 md:p-6">
+					<ResponsiveContainer width="100%" height={400}>
+						<PieChart>
+							<Pie
+								data={aggregatedData}
+								cx="50%"
+								cy="50%"
+								label
+								outerRadius={150}
+								fill="#8884d8"
+								dataKey="amount"
+								onMouseEnter={(_, index) => setActiveIndex(index)}>
+								{aggregatedData.map(
+									(entry: AggregatedDataItem, index: number) => (
+										<Cell
+											key={`cell-${index}`}
+											fill={
+												index === activeIndex ? "rgb(29, 78, 216)" : entry.color
+											}
+										/>
+									)
+								)}
+							</Pie>
+							<Tooltip />
+							<Legend />
+						</PieChart>
+					</ResponsiveContainer>
+				</div>
 			</div>
 		</div>
 	);
